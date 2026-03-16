@@ -29,3 +29,13 @@ def test_fix_phone_num_bad_inputs():
 
     with pytest.raises(ValueError):
         fix_phone_num("(3213) 654 3333")
+        
+def test_fix_phone_num_non_digit_inputs():
+    with pytest.raises(ValueError):
+        fix_phone_num("334dfdee45")
+
+    with pytest.raises(ValueError):
+        fix_phone_num("abcdefghij")
+        
+if (len(phone_num_to_fix) != 10):
+    raise ValueError("Only 10 digit numbers")
